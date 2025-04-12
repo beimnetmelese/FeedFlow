@@ -9,8 +9,6 @@ function LayOut() {
     <>
       <Grid templateAreas={`"nav" "main"`}>
         <GridItem
-          boxShadow="3px 3px 3px 3px #B0B0B0"
-          bg={"#219B9D"}
           area={"nav"}
           paddingX={"10px"}
           position={"fixed"}
@@ -19,7 +17,7 @@ function LayOut() {
         >
           <NavBar />
         </GridItem>
-        <GridItem marginTop={"40px"} area={"main"}>
+        <GridItem marginTop={"80px"} area={"main"}>
           <Outlet />
         </GridItem>
       </Grid>

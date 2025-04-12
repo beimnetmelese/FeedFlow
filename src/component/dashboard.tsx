@@ -63,7 +63,7 @@ type FeedbackStats = {
 type Feedback = {
   id: number;
   feedback_text: string;
-  feedback_type: "POSITIVE" | "NEGATIVE";
+  feedback_type: "positive" | "negative";
   feedback_time: string;
   sector: string | null;
 };
@@ -349,12 +349,12 @@ const Dashboard: React.FC = () => {
                   borderWidth="1px"
                   borderRadius="lg"
                   borderColor={
-                    feedback.feedback_type === "POSITIVE"
+                    feedback.feedback_type === "positive"
                       ? "green.200"
                       : "red.200"
                   }
                   bg={
-                    feedback.feedback_type === "POSITIVE"
+                    feedback.feedback_type === "positive"
                       ? "green.50"
                       : "red.50"
                   }
@@ -363,9 +363,9 @@ const Dashboard: React.FC = () => {
                     <Text
                       fontWeight="bold"
                       color={
-                        feedback.feedback_type === "POSITIVE"
-                          ? "green.600"
-                          : "red.600"
+                        feedback.feedback_type === "positive"
+                          ? "green.800"
+                          : "red.800"
                       }
                     >
                       {feedback.feedback_type}
@@ -374,7 +374,9 @@ const Dashboard: React.FC = () => {
                       {new Date(feedback.feedback_time).toLocaleString()}
                     </Text>
                   </Flex>
-                  <Text mb={2}>{feedback.feedback_text}</Text>
+                  <Text color={"black"} mb={2}>
+                    {feedback.feedback_text}
+                  </Text>
                   {feedback.sector && (
                     <Text fontSize="sm" color="gray.600">
                       Sector: {feedback.sector}

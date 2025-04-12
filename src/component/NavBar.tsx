@@ -35,7 +35,7 @@ const NavBar = () => {
     { path: "/dashboard", icon: FiHome, label: "Dashboard" },
     { path: "/feedback", icon: FiMessageSquare, label: "Feedback" },
     { path: "/analytic", icon: FiBarChart2, label: "Analytics" },
-    { path: "/faq", icon: FiHelpCircle, label: "FAQ" },
+    { path: "/faq", icon: FiHelpCircle, label: "Train AI" },
   ];
 
   return (
@@ -45,6 +45,7 @@ const NavBar = () => {
       color={navColor}
       px={{ base: 4, md: 6 }}
       py={3}
+      width={"100%"}
       boxShadow="sm"
       position="sticky"
       top={0}
