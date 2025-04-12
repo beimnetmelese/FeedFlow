@@ -155,7 +155,7 @@ const FeedbackList: React.FC = () => {
               variant="elevated"
               borderLeftWidth="4px"
               borderLeftColor={
-                feedback.feedback_type === "positive"
+                feedback.feedback_type.toLocaleLowerCase() === "positive"
                   ? `${positiveScheme}.400`
                   : `${negativeScheme}.400`
               }
@@ -174,7 +174,7 @@ const FeedbackList: React.FC = () => {
                   <Tag
                     size="sm"
                     colorScheme={
-                      feedback.feedback_type === "positive"
+                      feedback.feedback_type.toLocaleLowerCase() === "positive"
                         ? positiveScheme
                         : negativeScheme
                     }
@@ -185,7 +185,8 @@ const FeedbackList: React.FC = () => {
                     <Flex align="center">
                       <Icon
                         as={
-                          feedback.feedback_type === "positive"
+                          feedback.feedback_type.toLocaleLowerCase() ===
+                          "positive"
                             ? FiThumbsUp
                             : FiThumbsDown
                         }

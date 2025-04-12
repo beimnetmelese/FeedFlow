@@ -63,7 +63,7 @@ type FeedbackStats = {
 type Feedback = {
   id: number;
   feedback_text: string;
-  feedback_type: "positive" | "negative";
+  feedback_type: string;
   feedback_time: string;
   sector: string | null;
 };
@@ -349,12 +349,12 @@ const Dashboard: React.FC = () => {
                   borderWidth="1px"
                   borderRadius="lg"
                   borderColor={
-                    feedback.feedback_type === "positive"
+                    feedback.feedback_type.toLowerCase() === "positive"
                       ? "green.200"
                       : "red.200"
                   }
                   bg={
-                    feedback.feedback_type === "positive"
+                    feedback.feedback_type.toLowerCase() === "positive"
                       ? "green.50"
                       : "red.50"
                   }
@@ -363,7 +363,7 @@ const Dashboard: React.FC = () => {
                     <Text
                       fontWeight="bold"
                       color={
-                        feedback.feedback_type === "positive"
+                        feedback.feedback_type.toLowerCase() === "positive"
                           ? "green.800"
                           : "red.800"
                       }
