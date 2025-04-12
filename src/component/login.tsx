@@ -129,7 +129,7 @@ const AdminLogin = () => {
                   type="text"
                   value={credentials.username}
                   onChange={handleChange}
-                  placeholder="admin@example.com"
+                  placeholder="Username"
                   size="lg"
                   color={"black"}
                   borderRadius="xl"
