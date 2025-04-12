@@ -65,7 +65,7 @@ const FeedbackList: React.FC = () => {
   // Client-side filtering
   const filteredFeedbacks = feedbacks.filter((feedback) => {
     if (filter === "ALL") return true;
-    return feedback.feedback_type === filter;
+    return feedback.feedback_type.toLowerCase() === filter;
   });
 
   // Color schemes
@@ -155,7 +155,7 @@ const FeedbackList: React.FC = () => {
               variant="elevated"
               borderLeftWidth="4px"
               borderLeftColor={
-                feedback.feedback_type.toLocaleLowerCase() === "positive"
+                feedback.feedback_type.toLowerCase() === "positive"
                   ? `${positiveScheme}.400`
                   : `${negativeScheme}.400`
               }
@@ -174,7 +174,7 @@ const FeedbackList: React.FC = () => {
                   <Tag
                     size="sm"
                     colorScheme={
-                      feedback.feedback_type.toLocaleLowerCase() === "positive"
+                      feedback.feedback_type.toLowerCase() === "positive"
                         ? positiveScheme
                         : negativeScheme
                     }
@@ -185,8 +185,7 @@ const FeedbackList: React.FC = () => {
                     <Flex align="center">
                       <Icon
                         as={
-                          feedback.feedback_type.toLocaleLowerCase() ===
-                          "positive"
+                          feedback.feedback_type.toLowerCase() === "positive"
                             ? FiThumbsUp
                             : FiThumbsDown
                         }
