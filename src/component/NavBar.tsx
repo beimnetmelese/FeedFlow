@@ -105,7 +105,7 @@ const NavBar = () => {
                 aria-label="Navigation menu"
                 px={2}
               >
-                <FiMenu size={5} />
+                <FiMenu size={"20px"} />
               </MenuButton>
               <MenuList
                 bg={navBg}
