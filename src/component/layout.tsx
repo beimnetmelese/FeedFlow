@@ -1,7 +1,5 @@
 import { Grid, GridItem } from "@chakra-ui/react";
-
 import { Outlet } from "react-router-dom";
-import ScrollToTop from "../router/scrollToTheTop";
 import NavBar from "./NavBar";
 
 function LayOut() {

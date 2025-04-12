@@ -26,7 +26,6 @@ import {
   FiThumbsUp,
   FiThumbsDown,
 } from "react-icons/fi";
-import UseAuth from "../service/useAuth";
 
 type Feedback = {
   id: number;
