@@ -110,8 +110,8 @@ const AnalyticsDashboard: React.FC = () => {
       setLoading(true);
       const url =
         days === "all"
-          ? "http://127.0.0.1:8000/api/feedbackstats"
-          : `http://127.0.0.1:8000/api/feedbackstats/?days=${days}`;
+          ? "https://Bewnet.pythonanywhere.com/api/feedbackstats"
+          : `https://Bewnet.pythonanywhere.com/api/feedbackstats/?days=${days}`;
 
       const response = await fetch(url);
       if (!response.ok) throw new Error("Failed to fetch stats");

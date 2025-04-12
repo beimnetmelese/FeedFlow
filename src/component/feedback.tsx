@@ -26,6 +26,7 @@ import {
   FiThumbsUp,
   FiThumbsDown,
 } from "react-icons/fi";
+import UseAuth from "../service/useAuth";
 
 type Feedback = {
   id: number;
@@ -42,7 +43,7 @@ const FeedbackList: React.FC = () => {
   const [filter, setFilter] = useState<"ALL" | "positive" | "negative">("ALL");
 
   useEffect(() => {
-    const url = "http://127.0.0.1:8000/";
+    const url = "https://Bewnet.pythonanywhere.com/";
     const fetchFeedbacks = async () => {
       try {
         setLoading(true);

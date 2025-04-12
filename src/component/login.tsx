@@ -17,6 +17,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FiLock, FiMail, FiEye, FiEyeOff } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
   const [credentials, setCredentials] = useState({
@@ -26,6 +27,7 @@ const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -40,13 +42,16 @@ const AdminLogin = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/jwt/create/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      });
+      const response = await fetch(
+        "https://Bewnet.pythonanywhere.com/auth/jwt/create/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(credentials),
+        }
+      );
 
       const data = await response.json();
 
@@ -61,6 +66,8 @@ const AdminLogin = () => {
       }
 
       // Redirect to admin dashboard
+      navigate("/dashboard");
+      window.location.reload();
     } catch (error) {
       toast({
         title: "Login Error",
